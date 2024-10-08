@@ -293,9 +293,22 @@ def write_XYZ(filename, structures):
     io.write(filename, structures)
 
 def write_N2P2(filename, structures):
-    print("Not implemented yet, please check back later.")
-    #TODO
-    pass
+    text = ""
+    for structure in structures:
+        text += "begin\n"
+        text += "comment\n"
+        num_atoms = len(structure)
+        if True in structure.get_pbc():
+            for i in range(3):
+                text += "lattice " + " ".join(["{0:0.15E}".format(i) for i in structure.cell[:][i]]) + "\n"
+        for i in range(num_atoms):
+            text += "atom " + " ".join(["{0:0.15E}".format(i) for i in structure.positions[i]]) + " " + list(structure.symbols)[i] + " 0.0 0.0 " + " ".join(["{0:0.15E}".format(i) for i in structure.get_forces()[i]]) + "\n"
+        text += "energy " + str(structure.get_potential_energy()) + "\n"
+        text += "charge 0.0\n"
+        text += "end\n"
+
+    with open(filename, 'w') as f:
+        print(text, file=f)
 
 def reorder(structures):
     reordered = []
