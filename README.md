@@ -1,7 +1,7 @@
 taconverter
 ==============================
 
-Converter for input files for the machine learning architectures [VASP ML](https://www.vasp.at/wiki/index.php/ML_AB), [N2P2](https://github.com/CompPhysVienna/n2p2) and models reading ase XYZ files (e.g. [MACE](https://github.com/ACEsuit/mace), developed within the [special research programme TACO](https://sfb-taco.at)
+Converter for input files for the machine learning architectures [VASP ML](https://www.vasp.at/wiki/index.php/ML_AB), [N2P2](https://github.com/CompPhysVienna/n2p2) and models reading ase XYZ files (e.g. [MACE](https://github.com/ACEsuit/mace)), developed within the [special research programme TACO](https://sfb-taco.at)
 
 ### Use
 
